@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
 
 	  <script src="./jquery-3.2.1.min.js" type="text/javascript"></script>
 
@@ -20,7 +20,7 @@
 
 	  			var num = $("#num").val();
 	  			num=parseInt(num);
-	  			var arr = fib(num);
+	  		
 	  			
 	  				var table= $("#data");
 	  			table.html("");
@@ -29,9 +29,21 @@
 	  		 		showError();
 	  		 		return;
 	  		 	}
+	  		 	var arr= new Array();
   			  		
 
-	  		
+	  		 	if(num==1){
+	  		 		arr.push(0);
+
+	  		 	}else if (num==2)	{
+	  		 		arr.push(0);
+	  		 		arr.push(1);
+
+	  		 	}else{
+	  		 	arr = fib(num-1);	
+	  		 	}
+
+	  			
 
 	  			for(var i = 0;i<arr.length;i++)
 	  			{
@@ -55,7 +67,7 @@
 
 	  		 	var err=$("#error");
   			  		err.fadeIn(100,function(){
-  			  			$(this).fadeOut(4000);
+  			  			$(this).fadeOut(2500);
   			  		});
 	  		}
 
@@ -65,7 +77,9 @@
 </head>
 <body>
 
+
 <div class="" style="margin: 30px" >
+<h3 class="jumbotron">Fibonacci Sequence</h3>
 
 	<div class="form-group" style="display:block; margin-bottom:20px;">
 		<input class="form-control" type="number" name="" style="display:inline-block" id="num" placeholder="Enter any Number">

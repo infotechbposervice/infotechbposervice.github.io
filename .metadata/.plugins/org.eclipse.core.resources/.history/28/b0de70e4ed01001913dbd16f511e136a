@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fibonacci</title>
+
+	  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" >
+
+	  <script src="./jquery-3.2.1.min.js" type="text/javascript"></script>
+
+
+	  <script type="text/javascript">
+	  	jQuery(document).ready(function(){
+
+	  			$("#error").fadeOut();
+	  		$("#submit").click(function(){
+
+	  			var num = $("#num").val();
+	  			num=parseInt(num);
+	  		
+	  			
+	  				var table= $("#data");
+	  			table.html("");
+	  		 	if(num<=0)
+	  		 	{
+	  		 		showError();
+	  		 		return;
+	  		 	}
+	  		 	var arr= new Array();
+  			  		
+
+	  		 	if(num==1){
+	  		 		arr.push(0);
+
+	  		 	}else if (num==2)	{
+	  		 		arr.push(0);
+	  		 		arr.push(1);
+
+	  		 	}else{
+	  		 	arr = fib(num-1);	
+	  		 	}
+
+	  			
+
+	  			for(var i = 0;i<arr.length;i++)
+	  			{
+	  				var r = $("<tr>");
+	  				r.text(arr[i]);
+	  				table.append(r);
+	  			}
+
+	  			
+
+	  		})
+			function fib(n){
+				  let arr = [0, 1];
+				  for (let i = 2; i < n + 1; i++){
+				    arr.push(arr[i - 2] + arr[i -1])
+				  }
+				 return arr;
+			}
+
+	  		function showError(){
+
+	  		 	var err=$("#error");
+  			  		err.fadeIn(100,function(){
+  			  			$(this).fadeOut(2500);
+  			  		});
+	  		}
+
+	  	});
+	  </script>
+
+</head>
+<body>
+
+
+<div class="" style="margin: 30px" >
+<h3 class="jumbotron">Fibonacci Sequence</h3>
+
+	<div class="form-group" style="display:block; margin-bottom:20px;">
+		<input class="form-control" type="number" name="" style="display:inline-block" id="num" placeholder="Enter any Number">
+		<button class="btn btn-primary" id="submit" style="display: inline-block;margin-top: 10px">Submit</button>
+	</div>
+
+	<div class="alert alert-danger" id="error" style="display:inline-block; " >
+		<span   role="alert"> Wrong Input ! Please Enter a positive Number</span>
+	</div>
+
+	<div>
+		<table id="data">
+
+			
+		</table>
+	</div>
+</div>
+</body>
+</html>

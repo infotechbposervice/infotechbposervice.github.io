@@ -1,0 +1,8 @@
+INDEX VERSION 1.3+C:\Users\EG\AndroidStudioProjects\Freelancer\infotechbposervice.github.io\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3321247462.index
+2270785565.index
+3675471397.index
+1167280921.index
+1387455045.index
+1831083908.index
+3147614978.index
